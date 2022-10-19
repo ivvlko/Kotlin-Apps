@@ -9,9 +9,18 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class UnitTest {
+    private val dice: Dice = Dice(6);
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun CheckSidesIsPositiveNumber() {
+        val result: Int = dice.getSides();
+        assertTrue(result > 0);
+    }
+
+    @Test
+    fun TestGeneratedRandomNumberIsBiggerThanZero() {
+        val result: Int = dice.roll();
+        assertTrue(result > 0);
     }
 }
