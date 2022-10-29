@@ -28,7 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         val result : Double = amount * percentage!!;
 
-        binding.amount.setText(result.toString());
+        if (round){
+            binding.amount.setText(result.toInt().toString());
+        } else{
+            binding.amount.setText(result.toString());
+        }
 
     }
 }
